@@ -23,9 +23,9 @@
         android:textColor="@color/accent"
         android:textSize="@dimen/button_text"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/progress_bar_layout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/progress_bar_layout" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <FrameLayout
         android:id="@+id/progress_bar_layout"
@@ -37,24 +37,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar_exercise">
+
         <ProgressBar
+            android:id="@+id/progress_bar"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/progress_bar"
-            android:max="10"
             android:background="@drawable/circular_progress_bar_gray"
-            android:progressDrawable="@drawable/circular_progress_bar"
             android:indeterminate="false"
+            android:max="10"
             android:progress="100"
-            android:rotation="-90"
-            />
+            android:progressDrawable="@drawable/circular_progress_bar"
+            android:rotation="-90" />
+
         <LinearLayout
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:background="@drawable/item_circular_full">
+            android:background="@drawable/item_circular_full"
+            android:gravity="center">
+
             <TextView
                 android:id="@+id/timer"
                 android:layout_width="wrap_content"
@@ -62,39 +64,71 @@
                 android:textColor="@color/white"
                 android:textSize="@dimen/button_text"
                 android:textStyle="bold"
-                tools:text="10"/>
+                tools:text="10" />
         </LinearLayout>
     </FrameLayout>
+
+    <ImageView
+        android:contentDescription="@string/exercise_name"
+        android:id="@+id/exercise_image"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_jumping_jacks"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/exercise_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_exercise"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/exercise_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/exercise_name"
+        android:textColor="@color/accent"
+        android:textSize="@dimen/button_text"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/exercise_image"
+        app:layout_constraintBottom_toTopOf="@id/progress_bar_layout_exercise"
+        tools:visibility="visible" />
+
     <FrameLayout
         android:id="@+id/progress_bar_layout_exercise"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_margin="10dp"
-        tools:visibility="gone"
-        android:visibility="invisible"
         android:background="@drawable/item_circular_border"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_exercise">
+        app:layout_constraintTop_toBottomOf="@id/exercise_name"
+        tools:visibility="visible">
+
         <ProgressBar
+            android:id="@+id/progress_bar_exercise"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/progress_bar_exercise"
-            android:max="30"
             android:background="@drawable/circular_progress_bar_gray"
-            android:progressDrawable="@drawable/circular_progress_bar"
             android:indeterminate="false"
+            android:max="30"
             android:progress="100"
-            android:rotation="-90"
-            />
+            android:progressDrawable="@drawable/circular_progress_bar"
+            android:rotation="-90" />
+
         <LinearLayout
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:background="@drawable/item_circular_full">
+            android:background="@drawable/item_circular_full"
+            android:gravity="center">
+
             <TextView
                 android:id="@+id/timer_exercise"
                 android:layout_width="wrap_content"
@@ -102,7 +136,7 @@
                 android:textColor="@color/white"
                 android:textSize="@dimen/button_text"
                 android:textStyle="bold"
-                tools:text="30"/>
+                tools:text="30" />
         </LinearLayout>
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
