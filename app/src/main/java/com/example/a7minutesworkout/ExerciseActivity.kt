@@ -37,6 +37,9 @@ class ExerciseActivity : AppCompatActivity() {
     binding?.exerciseName?.visibility = View.INVISIBLE
     binding?.progressBarLayoutExercise?.visibility = View.INVISIBLE
     binding?.exerciseImage?.visibility = View.INVISIBLE
+    binding?.upcomingLabel?.visibility = View.VISIBLE
+    binding?.upcomingExerciseName?.visibility = View.VISIBLE
+    binding?.upcomingExerciseName?.text = exerciseList!![currentExercisePosition+1].getName()
     restTimer?.let {
       it.cancel()
       restProgress = 0
@@ -50,6 +53,8 @@ class ExerciseActivity : AppCompatActivity() {
     binding?.exerciseName?.visibility = View.VISIBLE
     binding?.progressBarLayoutExercise?.visibility = View.VISIBLE
     binding?.exerciseImage?.visibility = View.VISIBLE
+    binding?.upcomingLabel?.visibility = View.INVISIBLE
+    binding?.upcomingExerciseName?.visibility = View.INVISIBLE
     exerciseTimer?.let {
       it.cancel()
       exerciseProgress = 0
