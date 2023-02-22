@@ -131,7 +131,7 @@
         android:layout_margin="10dp"
         android:background="@drawable/item_circular_border"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/exercise_status"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/exercise_name"
@@ -166,4 +166,11 @@
                 tools:text="30" />
         </LinearLayout>
     </FrameLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/exercise_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/progress_bar_layout_exercise"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
