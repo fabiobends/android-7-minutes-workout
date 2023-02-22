@@ -76,10 +76,10 @@
         android:textColor="@color/primary"
         android:textSize="16sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/upcoming_exercise_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/progress_bar_layout"
-        app:layout_constraintBottom_toTopOf="@id/upcoming_exercise_name"
         tools:visibility="visible" />
 
     <TextView
@@ -96,16 +96,16 @@
         tools:visibility="visible" />
 
     <ImageView
-        android:contentDescription="@string/exercise_name"
         android:id="@+id/exercise_image"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:contentDescription="@string/exercise_name"
         android:scaleType="fitXY"
         android:src="@drawable/ic_jumping_jacks"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@id/exercise_name"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar_exercise"
         tools:visibility="visible" />
 
@@ -118,10 +118,10 @@
         android:textSize="@dimen/button_text"
         android:textStyle="bold"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/progress_bar_layout_exercise"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/exercise_image"
-        app:layout_constraintBottom_toTopOf="@id/progress_bar_layout_exercise"
         tools:visibility="visible" />
 
     <FrameLayout
@@ -166,11 +166,13 @@
                 tools:text="30" />
         </LinearLayout>
     </FrameLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/exercise_status"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/progress_bar_layout_exercise"
         app:layout_constraintBottom_toBottomOf="parent"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progress_bar_layout_exercise" />
 </androidx.constraintlayout.widget.ConstraintLayout>
