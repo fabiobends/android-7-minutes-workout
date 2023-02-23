@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".FinisheActivity">
+    tools:context=".FinishActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_finish_activity"
